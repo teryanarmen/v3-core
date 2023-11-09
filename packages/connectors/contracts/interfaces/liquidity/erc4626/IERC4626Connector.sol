@@ -34,6 +34,11 @@ interface IERC4626Connector {
     error ERC4626InvalidRedeem(uint256 actual, uint256 expected);
 
     /**
+     * @dev Tells the underlying token of an ERC4626
+     */
+    function getToken(address erc4626) external view returns (address);
+
+    /**
      * @dev Deposits assets to the underlying ERC4626
      * @param erc4626 Address of the ERC4626 to join
      * @param tokenIn Address of the token to join the ERC4626
